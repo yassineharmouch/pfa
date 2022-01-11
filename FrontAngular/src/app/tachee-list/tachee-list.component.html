@@ -1,0 +1,23 @@
+<h2> Tache List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Titre</th>
+            <th> Description </th>
+            <th> Status</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let tachee of tachees" >
+            <td> {{ tachee.titre }} </td>
+            <td> {{ tachee.description }} </td>
+            <td> {{ tachee.status }} </td>
+            <td>
+                <button (click) = "updateTachee(tachee.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteTachee(tachee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "tacheeDetails(tachee.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
